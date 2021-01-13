@@ -1,0 +1,23 @@
+.card {
+  margin: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.tasks-stat {
+  display: flex;
+  flex-direction: column;
+}
+
+.low-result {
+  background-color: #ff3333;
+}
+
+.medium-result {
+  background-color: orange;
+}
+
+.good-result {
+  background-color: green;
+}

@@ -1,0 +1,11 @@
+<div class="content-container">
+  <mat-spinner *ngIf="loading"></mat-spinner>
+
+  <div *ngIf="!loading && resultsObj === undefined">
+    <app-task [task]="task" (onClickNextTask)="onClickNextTask($event)"></app-task>
+  </div>
+
+  <div *ngIf="resultsObj !== undefined">
+    <app-results [resultsObj]="resultsObj" [exercise]="exerciseOriginal"></app-results>
+  </div>
+</div>

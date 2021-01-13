@@ -1,0 +1,17 @@
+<mat-spinner *ngIf="loading"></mat-spinner>
+
+<h1 *ngIf="userStatistics.exerciseResults.length===0">You haven't still done any exercises</h1>
+
+<div *ngIf="!loading && userStatistics.exerciseResults.length!==0">
+  <div *ngFor="let stat of userStatistics.exerciseResults">
+    <mat-card class="card" [ngClass]="getClassByResult(stat.result)">
+      <div class="ex-main-info">
+        <h3> {{ getExName(stat.id) }} </h3>
+        <h3> Percentage of correctness: {{ stat.result }}% </h3>
+      </div>
+      <div *ngFor="let taskStat of stat.taskResults; let i = index" class="tasks-stat">
+        <p> Task{{ i+1 }}: {{ taskStat.result }}%</p>
+      </div>
+    </mat-card>
+  </div>
+</div>

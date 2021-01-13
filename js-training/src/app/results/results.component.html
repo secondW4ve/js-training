@@ -1,0 +1,13 @@
+<h1>{{ exercise.name }}</h1>
+
+<div class="results-container" *ngFor="let result of resultsArray">
+  <div class="result-container">
+    <mat-card [ngClass]="getClass(result.result.correct)" class="card">
+
+      <h2> {{ result.taskName }} </h2>
+      <div class="correct-solutions" *ngIf="!result.result.correct">
+        <p> {{ getRightSolution(result.taskId) }} </p>
+      </div>
+    </mat-card>
+  </div>
+</div>

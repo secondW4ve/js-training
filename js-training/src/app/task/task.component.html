@@ -1,0 +1,28 @@
+<div class="task-container">
+  <h1 class="condition">{{ task.name }}</h1>
+  <div cdkDropListGroup>
+    <div class="options-container">
+      <h2>Solutions</h2>
+
+      <div cdkDropList [cdkDropListData]="solutions" (cdkDropListDropped)="drop($event)" class="options-list">
+        <div *ngFor="let solution of solutions" cdkDrag class="solution-box">
+          <div class="custom-placeholder" *cdkDragPlaceholder></div>
+          {{ solution.content }}
+        </div>
+      </div>
+    </div>
+
+    <div class="options-container">
+      <h2>Answer</h2>
+
+      <div cdkDropList [cdkDropListData]="answers" (cdkDropListDropped)="drop($event)" class="options-list">
+        <div *ngFor="let answer of answers" cdkDrag class="solution-box">
+          <div class="custom-placeholder" *cdkDragPlaceholder></div>
+          {{ answer.content }}
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <button mat-raised-button color="primary" (click)="onClick()">Next task</button>
+</div>

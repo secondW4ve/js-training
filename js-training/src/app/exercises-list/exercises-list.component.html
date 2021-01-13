@@ -1,0 +1,14 @@
+<mat-spinner *ngIf="loading"></mat-spinner>
+
+<div *ngIf="!loading">
+  <div *ngFor="let exercise of exercises">
+    <mat-card class="card">
+      <h2> {{ exercise.name }} </h2>
+      <div class="card-nav">
+        <h3> Complexity: {{ exercise.complexity }} </h3>
+        <button mat-button color="primary" (click)="openExercise(exercise.id)">Start</button>
+      </div>
+    </mat-card>
+  </div>
+</div>
+
